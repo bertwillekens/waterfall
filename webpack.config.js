@@ -12,9 +12,9 @@ module.exports = (env, argv) => {
     mode: argv.mode || 'development',
     entry: './src/main.tsx',
     output: {
-      filename: 'widget.js',
+      filename: 'demotool.js',
       path: path.resolve(__dirname, 'dist'),
-      library: 'MyWidget',
+      library: 'DemoTool',
       libraryTarget: 'umd',
       publicPath: '/dist/',
     },
