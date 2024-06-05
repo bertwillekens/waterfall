@@ -32,8 +32,8 @@ export function WaitActionEditor({
       isPlaying={isPlaying}
     >
       <FormLockup>
-        <div className="dt-flex dt-gap-3">
-          <div className="dt-flex-1">
+        <div tw="flex gap-3">
+          <div tw="flex-1">
             <RadioToggle
               label="Wait for"
               value={action.waitForType}
@@ -49,7 +49,7 @@ export function WaitActionEditor({
               ]}
             />
           </div>
-          <div className="dt-flex-1">
+          <div tw="flex-1">
             {action.waitForType === "timeout" && (
               <Input
                 labelText={"Duration (ms)"}

@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import React from "react";
 import { type IconType } from "react-icons";
+import tw from "twin.macro";
 
 const IconButton = React.forwardRef<
   HTMLButtonElement,
@@ -15,14 +15,14 @@ const IconButton = React.forwardRef<
     <button
       ref={ref}
       {...restProps}
-      className={clsx("disabled:dt-cursor-not-allowed disabled:dt-opacity-50")}
+      tw="disabled:cursor-not-allowed disabled:opacity-50"
     >
       <Icon
-        className={clsx(
-          "dt-text-black",
-          size === "sm" && "dt-h-4 dt-w-4",
-          size === "md" && "dt-h-5 dt-w-5",
-        )}
+        css={[
+          tw`text-black`,
+          size === "sm" && tw`h-4 w-4`,
+          size === "md" && tw`h-5 w-5`,
+        ]}
       />
     </button>
   );

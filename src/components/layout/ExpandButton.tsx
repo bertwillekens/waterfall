@@ -10,18 +10,18 @@ export function ExpandButton({
   onHideClick: () => void;
 }) {
   return (
-    <div className="dt-relative dt-h-16 dt-w-16">
+    <div tw="relative h-16 w-16">
       <button
-        className="dt-flex dt-h-16 dt-w-16 dt-items-center dt-justify-center dt-rounded-full dt-bg-white dt-shadow-lg dt-ring-1 dt-ring-black/5 hover:dt-bg-gray-50"
+        tw="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-black/5 hover:bg-gray-50"
         onClick={onClick}
       >
-        <FaScroll className="dt-h-7 dt-w-7" />
+        <FaScroll tw="h-7 w-7" />
       </button>
       <button
-        className="dt-absolute -dt-right-1 -dt-top-1 dt-flex dt-h-6 dt-w-6 dt-items-center dt-justify-center dt-rounded-full dt-bg-white dt-shadow-md dt-ring-1 dt-ring-inset dt-ring-black/5 hover:dt-bg-gray-50 disabled:dt-cursor-not-allowed disabled:dt-opacity-50 disabled:hover:dt-bg-white"
+        tw="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-inset ring-black/5 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-white"
         onClick={onHideClick}
       >
-        <IoCloseOutline className="dt-h-4 dt-w-4" />
+        <IoCloseOutline tw="h-4 w-4" />
       </button>
     </div>
   );

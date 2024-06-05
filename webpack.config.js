@@ -24,11 +24,6 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
-        },
-        {
           test: /\.css$/i,
           use: [
             'style-loader',
@@ -42,6 +37,12 @@ module.exports = (env, argv) => {
               },
             },
           ],
+        },
+        {
+          test: /\.[jt]sx?$/,
+          exclude: /node_modules/,
+          loader: require.resolve('babel-loader'),
+          // See .babelrc for further babel config
         },
       ],
     },

@@ -95,17 +95,17 @@ export function ScenarioEditor({
       title="Scenario"
       forehead={
         <>
-          <div className="dt-flex dt-flex-row dt-justify-center dt-gap-3">
+          <div tw="flex flex-row justify-center gap-3">
             <Button onClick={onPlayScenario}>
-              <IoPlayOutline className="dt-h-4 dt-w-4" />
+              <IoPlayOutline tw="h-4 w-4" />
               Play scenario
             </Button>
             <Button onClick={goToIo}>
-              <IoCodeSlashOutline className="dt-h-4 dt-w-4" />
+              <IoCodeSlashOutline tw="h-4 w-4" />
               YAML I/O
             </Button>
             <Button onClick={onClearAll}>
-              <IoTrashBinOutline className="dt-h-4 dt-w-4" />
+              <IoTrashBinOutline tw="h-4 w-4" />
               Clear all
             </Button>
           </div>
@@ -113,12 +113,12 @@ export function ScenarioEditor({
       }
       chin={
         <Button onClick={addScene}>
-          <IoAddOutline className="dt-h-4 dt-w-4" /> Scene
+          <IoAddOutline tw="h-4 w-4" /> Scene
         </Button>
       }
     >
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="dt-bg-slate-200 dt-p-4 dt-pb-0">
+        <div tw="bg-slate-200 p-4 pb-0">
           <Droppable droppableId="scenes">
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
@@ -135,38 +135,38 @@ export function ScenarioEditor({
                             ref={provided.innerRef}
                             {...provided.dragHandleProps}
                             {...provided.draggableProps}
-                            className="dt-pb-4"
+                            tw="pb-4"
                           >
                             <Card
                               onClick={() => goToScene(scene.key)}
                               key={scene.key}
                               headerContent={
-                                <div className="dt-flex dt-flex-row dt-items-start dt-justify-between dt-gap-3">
-                                  <div className="dt-shrink dt-grow dt-overflow-hidden">
-                                    <div className="dt-overflow-hidden dt-text-ellipsis dt-whitespace-nowrap dt-text-xs dt-uppercase dt-tracking-wide dt-text-slate-500">
+                                <div tw="flex flex-row items-start justify-between gap-3">
+                                  <div tw="shrink grow overflow-hidden">
+                                    <div tw="overflow-hidden text-ellipsis whitespace-nowrap text-xs uppercase tracking-wide text-slate-500">
                                       Scene #{index + 1}
                                     </div>
                                     <div
-                                      className="dt-mt-2 dt-overflow-hidden dt-text-ellipsis dt-whitespace-nowrap"
+                                      tw="mt-2 overflow-hidden text-ellipsis whitespace-nowrap"
                                       title={scene.pageTitle}
                                     >
                                       {scene.pageTitle}
                                     </div>
                                     <div
-                                      className="dt-mt-2 dt-overflow-hidden dt-text-ellipsis dt-whitespace-nowrap dt-text-sm dt-text-slate-500"
+                                      tw="mt-2 overflow-hidden text-ellipsis whitespace-nowrap text-sm text-slate-500"
                                       title={scene.url}
                                     >
                                       {scene.url}
                                     </div>
                                   </div>
-                                  <div className="dt-flex dt-flex-row dt-justify-between dt-gap-3">
+                                  <div tw="flex flex-row justify-between gap-3">
                                     {onDeleteScene && (
                                       <button
                                         aria-label="Delete"
                                         title="Delete"
                                       >
                                         <IoTrashBinOutline
-                                          className="dt-h-5 dt-w-5"
+                                          tw="h-5 w-5"
                                           onClick={() => {
                                             onDeleteScene(index);
                                           }}

@@ -23,42 +23,42 @@ export default function ViewSkeleton({
   const { collapse } = useAppVisibility();
 
   return (
-    <div className="dt-flex dt-max-h-full dt-flex-col">
+    <div tw="flex max-h-full flex-col">
       {(title || onBack || forehead) && (
-        <div className="dt-relative dt-z-10 dt-border-b dt-border-b-slate-300 dt-bg-white dt-shadow-sm">
-          <div className="dt-flex dt-flex-col dt-divide-y dt-divide-slate-200">
+        <div tw="relative z-10 border-b border-b-slate-300 bg-white shadow-sm">
+          <div tw="flex flex-col divide-y divide-slate-200">
             {(title || onBack) && (
-              <div className="dt-flex dt-flex-row dt-justify-between dt-gap-3 dt-p-3 dt-px-4">
-                <div className="dt-flex-1">
+              <div tw="flex flex-row justify-between gap-3 p-3 px-4">
+                <div tw="flex-1">
                   {onBack && (
                     <Button onClick={onBack} aria-label="Back" title="Back">
-                      <IoChevronBackOutline className="dt-h-4 dt-w-4" />
+                      <IoChevronBackOutline tw="h-4 w-4" />
                     </Button>
                   )}
                 </div>
-                <div className="dt-flex dt-shrink dt-grow dt-flex-col dt-items-center dt-justify-center dt-gap-1 dt-overflow-hidden">
+                <div tw="flex shrink grow flex-col items-center justify-center gap-1 overflow-hidden">
                   {superTitle && (
-                    <div className="dt-max-w-full dt-overflow-hidden dt-text-ellipsis dt-whitespace-nowrap dt-text-xs dt-uppercase dt-tracking-wide dt-text-slate-500">
+                    <div tw="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs uppercase tracking-wide text-slate-500">
                       {superTitle}
                     </div>
                   )}
-                  <div className="dt-max-w-full dt-overflow-hidden dt-text-ellipsis dt-whitespace-nowrap dt-font-semibold">
+                  <div tw="max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
                     {title}
                   </div>
                 </div>
-                <div className="dt-flex-1"></div>
+                <div tw="flex-1"></div>
               </div>
             )}
-            {forehead && <div className="dt-p-3 dt-px-4">{forehead}</div>}
+            {forehead && <div tw="p-3 px-4">{forehead}</div>}
           </div>
         </div>
       )}
-      <div className="dt-shrink dt-grow dt-overflow-auto">{children}</div>
+      <div tw="shrink grow overflow-auto">{children}</div>
 
-      <div className="dt-relative dt-z-10 dt-border-t dt-border-t-slate-300 dt-bg-white dt-p-3 dt-px-4">
-        <div className="dt-flex dt-flex-row dt-items-center dt-justify-between dt-gap-3">
+      <div tw="relative z-10 border-t border-t-slate-300 bg-white p-3 px-4">
+        <div tw="flex flex-row items-center justify-between gap-3">
           <div>{chin}</div>
-          <div className="-dt-m-1 dt-ml-0">
+          <div tw="-m-1 ml-0">
             <CollapseButton onClick={collapse} />
           </div>
         </div>

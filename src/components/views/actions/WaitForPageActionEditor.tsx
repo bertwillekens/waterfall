@@ -28,7 +28,7 @@ export function WaitForPageActionEditor({
           <Button onClick={setToCurrentPage} size="sm">
             Set current page
           </Button>
-          <IoLockClosedOutline className="dt-h-5 dt-w-5 dt-text-slate-500" />
+          <IoLockClosedOutline tw="h-5 w-5 text-slate-500" />
         </>
       }
       locked={true}

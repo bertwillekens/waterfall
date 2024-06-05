@@ -3,15 +3,15 @@ import { IoInformationCircleOutline } from "react-icons/io5";
 
 function KeyboardInput({ text }: { text: string }) {
   return (
-    <kbd className="dt-rounded-md dt-border dt-border-black/40 dt-p-0.5 dt-px-1 dt-text-[0.875em] dt-leading-none">
+    <kbd tw="rounded-md border border-black/40 p-0.5 px-1 text-[0.875em] leading-none">
       {text}
     </kbd>
   );
 }
 export function ShortcutHint() {
   return (
-    <div className="dt-flex dt-gap-2 dt-rounded-full dt-bg-white/60 dt-p-3 dt-px-4 dt-text-sm dt-shadow-lg">
-      <IoInformationCircleOutline className="dt-h-5 dt-w-5 dt-opacity-50" />
+    <div tw="flex gap-2 rounded-full bg-white/60 p-3 px-4 text-sm shadow-lg">
+      <IoInformationCircleOutline tw="h-5 w-5 opacity-50" />
       <span>
         To toggle visibility, press <KeyboardInput text="Alt" /> +{" "}
         <KeyboardInput text="D" />

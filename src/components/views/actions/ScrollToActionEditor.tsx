@@ -43,8 +43,8 @@ export function ScrollToActionEditor({
       isPlaying={isPlaying}
     >
       <FormLockup>
-        <div className="dt-flex dt-gap-3">
-          <div className="dt-flex-1">
+        <div tw="flex gap-3">
+          <div tw="flex-1">
             <Input
               labelText={"Destination Y"}
               type="number"
@@ -54,12 +54,12 @@ export function ScrollToActionEditor({
               }
             />
           </div>
-          <div className="dt-flex dt-flex-1 dt-flex-col dt-justify-end">
+          <div tw="flex flex-1 flex-col justify-end">
             <Button onClick={setToCurrentPosition}>Set current position</Button>
           </div>
         </div>
-        <div className="dt-flex dt-gap-3">
-          <div className="dt-flex-1">
+        <div tw="flex gap-3">
+          <div tw="flex-1">
             <RadioToggle
               label="Duration type"
               value={action.durationType}
@@ -75,7 +75,7 @@ export function ScrollToActionEditor({
               ]}
             />
           </div>
-          <div className="dt-flex-1">
+          <div tw="flex-1">
             {action.durationType === "speed" ? (
               <Input
                 labelText={"Speed (px/s)"}

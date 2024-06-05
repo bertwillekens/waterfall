@@ -119,13 +119,13 @@ export default function SceneEditor({
       onBack={onBack}
       forehead={
         <>
-          <div className="dt-flex dt-flex-row dt-justify-center dt-gap-3">
+          <div tw="flex flex-row justify-center gap-3">
             <Button onClick={onPlayScene} disabled={isPlaying}>
-              <IoPlayOutline className="dt-h-4 dt-w-4" />
+              <IoPlayOutline tw="h-4 w-4" />
               Play scene
             </Button>
             <Button onClick={onClearAll}>
-              <IoTrashBinOutline className="dt-h-4 dt-w-4" />
+              <IoTrashBinOutline tw="h-4 w-4" />
               Clear all
             </Button>
           </div>
@@ -133,13 +133,13 @@ export default function SceneEditor({
       }
       chin={
         <>
-          <div className="dt-flex dt-gap-3">
+          <div tw="flex gap-3">
             <Button onClick={addAnimateScrollAction}>
-              <IoAddOutline className="dt-h-4 dt-w-4" />
+              <IoAddOutline tw="h-4 w-4" />
               Animate scroll
             </Button>
             <Button onClick={addWaitAction}>
-              <IoAddOutline className="dt-h-4 dt-w-4" />
+              <IoAddOutline tw="h-4 w-4" />
               Wait
             </Button>
           </div>
@@ -147,8 +147,8 @@ export default function SceneEditor({
       }
     >
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="dt-bg-slate-200 dt-p-4 dt-pb-0">
-          <div className="dt-pb-4">
+        <div tw="bg-slate-200 p-4 pb-0">
+          <div tw="pb-4">
             <WaitForPageActionEditor scene={value} onChange={onChange} />
           </div>
           <Droppable droppableId="actions">
@@ -169,7 +169,7 @@ export default function SceneEditor({
                           <div
                             ref={provided.innerRef}
                             {...provided.draggableProps}
-                            className="dt-pb-4"
+                            tw="pb-4"
                           >
                             <div {...provided.dragHandleProps}>
                               {action.type === "animateScroll" ? (

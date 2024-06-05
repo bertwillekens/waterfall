@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Radio, RadioGroup } from "@headlessui/react";
-import clsx from "clsx";
+import tw from "twin.macro";
 
 export type RadioToggleOption = {
   key: string;
@@ -21,34 +21,26 @@ export default function RadioToggle({
 }) {
   return (
     <fieldset aria-label={label}>
-      <div className="dt-mb-1 dt-flex dt-items-center dt-justify-between">
-        <div className="dt-text-sm dt-font-medium dt-leading-6 dt-text-gray-900">
-          {label}
-        </div>
+      <div tw="mb-1 flex items-center justify-between">
+        <div tw="text-sm font-medium leading-6 text-gray-900">{label}</div>
       </div>
 
-      <RadioGroup
-        value={value}
-        onChange={onChange}
-        className="dt-flex dt-gap-3"
-      >
+      <RadioGroup value={value} onChange={onChange} tw="flex gap-3">
         {options.map((option) => (
-          <Radio
-            key={option.name}
-            value={option.key}
-            className={({ focus, checked }) =>
-              clsx(
-                focus
-                  ? "dt-flex-1 dt-ring-2 dt-ring-indigo-600 dt-ring-offset-2"
-                  : "",
-                checked
-                  ? "dt-bg-indigo-600 dt-text-white hover:dt-bg-indigo-500"
-                  : "dt-bg-white dt-text-gray-900 dt-ring-1 dt-ring-inset dt-ring-gray-300 hover:dt-bg-gray-50",
-                "dt-flex dt-items-center dt-justify-center dt-rounded-md dt-px-3 dt-py-2 dt-text-sm dt-font-semibold dt-uppercase sm:dt-flex-1",
-              )
-            }
-          >
-            {option.name}
+          <Radio key={option.name} value={option.key} as={React.Fragment}>
+            {({ focus, checked }) => (
+              <div
+                css={[
+                  focus ? tw`flex-1 ring-2 ring-indigo-600 ring-offset-2` : "",
+                  checked
+                    ? tw`bg-indigo-600 text-white hover:bg-indigo-500`
+                    : tw`bg-white text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50`,
+                  tw`flex items-center justify-center rounded-md px-3 py-2 text-sm font-semibold uppercase sm:flex-1`,
+                ]}
+              >
+                {option.name}
+              </div>
+            )}
           </Radio>
         ))}
       </RadioGroup>

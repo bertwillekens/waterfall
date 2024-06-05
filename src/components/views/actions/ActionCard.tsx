@@ -22,10 +22,10 @@ export function ActionCard({
   return (
     <Card
       headerContent={
-        <div className="dt-flex dt-flex-row dt-items-start dt-justify-between dt-gap-3">
+        <div tw="flex flex-row items-start justify-between gap-3">
           <div>{title}</div>
           {buttons && (
-            <div className="dt-flex dt-flex-row dt-items-center dt-justify-between dt-gap-3">
+            <div tw="flex flex-row items-center justify-between gap-3">
               {buttons}
             </div>
           )}

@@ -33,6 +33,7 @@ const config = {
     ],
     "react/display-name": "off",
     "jsx-a11y/alt-text": [0],
+    "react/no-unknown-property": ["error", { "ignore": ["css", "tw"] }]
   },
   env: {
     browser: true,

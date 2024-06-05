@@ -81,41 +81,37 @@ export default function CodeInputScreen({
           {inputChanged ? (
             inputValid ? (
               <>
-                <div className="dt-text-sm dt-text-amber-500">Edited</div>
+                <div tw="text-sm text-amber-500">Edited</div>
                 <Button onClick={saveChanges}>
-                  <IoCheckmarkOutline className="dt-h-4 dt-w-4" />
+                  <IoCheckmarkOutline tw="h-4 w-4" />
                   Save changes
                 </Button>
               </>
             ) : (
               <>
-                <div className="dt-text-sm dt-text-red-500">
-                  Edited - Invalid
-                </div>
+                <div tw="text-sm text-red-500">Edited - Invalid</div>
                 <Button onClick={resetChanges}>
-                  <IoRefreshOutline className="dt-h-4 dt-w-4" />
+                  <IoRefreshOutline tw="h-4 w-4" />
                   Reset
                 </Button>
               </>
             )
           ) : (
-            <div className="dt-flex dt-flex-row dt-items-center dt-gap-3">
+            <div tw="flex flex-row items-center gap-3">
               <Button onClick={copyToClipboard}>
-                <IoCopyOutline className="dt-h-4 dt-w-4" />
+                <IoCopyOutline tw="h-4 w-4" />
                 Copy
               </Button>
-              {showCopySuccess && (
-                <div className="dt-text-sm dt-text-green-600">Copied</div>
-              )}
+              {showCopySuccess && <div tw="text-sm text-green-600">Copied</div>}
             </div>
           )}
         </>
       }
     >
-      <div className="dt-p-4">
+      <div tw="p-4">
         <textarea
           ref={textAreaRef}
-          className="dt-h-96 dt-w-full dt-font-mono dt-text-xs"
+          tw="h-96 w-full font-mono text-xs"
           value={textAreaValue}
           onChange={(e) => {
             setTextAreaValue(e.target.value);
