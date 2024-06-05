@@ -61,6 +61,7 @@ async function playAnimateScroll(action: AnimateScrollAction) {
     gsap.to(window, {
       scrollTo: action.y,
       duration: durationMs / 1000,
+      ease: "power1.inOut",
       onComplete: () => {
         console.info("[FINISH] animateScroll", action);
         resolve();
