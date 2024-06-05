@@ -2,7 +2,6 @@ import {
   scopedPreflightStyles,
   isolateInsideOfContainer, // there are also isolateOutsideOfContainer and isolateForComponents
 } from 'tailwindcss-scoped-preflight';
-import formsPlugin from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,7 +15,6 @@ module.exports = {
     },
   },
   plugins: [
-    formsPlugin,
     scopedPreflightStyles({
       isolationStrategy: isolateInsideOfContainer('#demo-tool'),
     }),
