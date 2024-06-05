@@ -10,18 +10,20 @@ declare global {
 }
 
 function main() {
-  const container = document.body;
-  if (!container) return;
+  window.addEventListener("load", function () {
+    const container = document.body;
+    if (!container) return;
 
-  let element = document.getElementById("demo-tool");
-  if (!element) {
-    element = document.createElement("div");
-    element.id = "demo-tool";
-    document.body.appendChild(element);
-  }
+    let element = document.getElementById("demo-tool");
+    if (!element) {
+      element = document.createElement("div");
+      element.id = "demo-tool";
+      document.body.appendChild(element);
+    }
 
-  const root = createRoot(element);
-  root.render(<App />);
+    const root = createRoot(element);
+    root.render(<App />);
+  });
 }
 
 main();
