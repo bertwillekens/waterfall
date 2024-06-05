@@ -72,17 +72,17 @@ const App: React.FC = () => {
       }) => (
         <PlaybackProvider>
           {shortcutNoticeShowing && (
-            <div className="dt-fixed dt-bottom-4 dt-right-4">
+              <div className="dt-z-app dt-fixed dt-bottom-4 dt-right-4">
               <ShortcutHint />
             </div>
           )}
           {visibility === "collapsed" && (
-            <div className="dt-fixed dt-bottom-4 dt-right-4">
+              <div className="dt-z-app dt-fixed dt-bottom-4 dt-right-4">
               <ExpandButton onClick={expand} onHideClick={hide} />
             </div>
           )}
           {visibility === "open" && (
-            <div className="dt-pointer-events-none dt-fixed dt-bottom-0 dt-right-0 dt-top-0 dt-flex dt-w-full dt-max-w-md dt-flex-col dt-justify-end dt-p-4">
+              <div className="dt-z-app dt-pointer-events-none dt-fixed dt-bottom-0 dt-right-0 dt-top-0 dt-flex dt-w-full dt-max-w-md dt-flex-col dt-justify-end dt-p-4">
               <div className="dt-pointer-events-auto dt-flex dt-max-h-full dt-flex-col dt-overflow-hidden dt-rounded-lg dt-bg-white dt-shadow-xl dt-ring-1 dt-ring-black dt-ring-opacity-5">
                 {currentView === "scene" && currentScene ? (
                   <SceneEditor

@@ -9,7 +9,11 @@ module.exports = {
   prefix: 'dt-',
   content: ["./src/**/*.{ts,tsx,html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        'app': '1993',
+      }
+    },
   },
   plugins: [
     formsPlugin,
