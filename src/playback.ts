@@ -18,9 +18,13 @@ export const DEFAULT_WAIT_TIMEOUT_DURATION = 1500;
 export async function waitForPage(scene: Scene) {
   console.info("[START] waitForPage", scene.url);
   return new Promise<void>((resolve) => {
+    let intervalId: ReturnType<typeof setInterval> | null = null;
     const listener = () => {
       if (document.location.href === scene.url) {
         console.info("[FINISH] waitForPage", scene.url);
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
         window.removeEventListener("load", listener);
         window.removeEventListener("popstate", listener);
         resolve();
@@ -28,6 +32,7 @@ export async function waitForPage(scene: Scene) {
     };
     window.addEventListener("load", listener);
     window.addEventListener("popstate", listener);
+    intervalId = setInterval(listener, 200);
     listener();
   });
 }
